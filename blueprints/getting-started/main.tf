@@ -56,10 +56,11 @@ module "eks_blueprints" {
     default = {
       node_group_name = "consul"
 
-      instance_types = ["m5.large"]
-      min_size       = 1
+      # The anti-affinity rules require each pod to be scheduled on different host.
+      instance_types = ["t3.medium"]
+      min_size       = 3
       max_size       = 5
-      desired_size   = 2
+      desired_size   = 3
 
       subnet_ids = module.vpc.private_subnets
     }
@@ -84,20 +85,19 @@ module "eks_blueprint_addons" {
   eks_cluster_version  = module.eks_blueprints.eks_cluster_version
 
   # EKS Managed Add-ons
-  enable_amazon_eks_vpc_cni    = true
-  enable_amazon_eks_coredns    = true
-  enable_amazon_eks_kube_proxy = true
+  enable_amazon_eks_vpc_cni            = true
+  enable_amazon_eks_coredns            = true
+  enable_amazon_eks_kube_proxy         = true
+  enable_amazon_eks_aws_ebs_csi_driver = true
 
   # HashiCorp Consul
-  enable_consul = true
-  consul_helm_config = {
-    namespace = var.namespace
-  }
+  # enable_consul = true
+  # consul_helm_config = {
+  #   namespace = var.namespace
+  # }
 
   tags = local.tags
 }
-
-
 
 ################################################################################
 # Supporting Resources
