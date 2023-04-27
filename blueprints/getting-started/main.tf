@@ -91,10 +91,10 @@ module "eks_blueprint_addons" {
   enable_amazon_eks_aws_ebs_csi_driver = true
 
   # HashiCorp Consul
-  # enable_consul = true
-  # consul_helm_config = {
-  #   namespace = var.namespace
-  # }
+  enable_consul = true
+  consul_helm_config = {
+    namespace = var.namespace
+  }
 
   tags = local.tags
 }
