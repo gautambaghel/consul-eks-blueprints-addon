@@ -13,6 +13,12 @@
   - [License](#license)
 
 ## Usage
+Credentials such as  AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KE must be exported to the CLI prior getting started.
+
+export AWS_ACCESS_KEY_ID=... 
+export AWS_SECRET_ACCESS_KEY=...
+export AWS_SESSION_TOKEN=...
+
 
 If you would like to override any defaults with the chart, you can do so by passing the `helm_config` variable.
 
