@@ -24,6 +24,7 @@ export AWS_SESSION_TOKEN=...
 ```
 
 After deploying the mesh, deploy HashiCups demo app
+Demo can be found here: https://github.com/hashicorp-education/learn-consul-get-started-kubernetes/tree/main/self-managed/eks/hashicups 
 
 ```sh
 
