@@ -23,6 +23,13 @@ export AWS_SESSION_TOKEN=...
 
 ```
 
+After deploying the mesh, deploy HashiCups demo app
+
+```sh
+
+kubectl apply --filename hashicups/v1/
+
+```
 
 If you would like to override any defaults with the chart, you can do so by passing the `helm_config` variable.
 
