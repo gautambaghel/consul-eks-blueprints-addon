@@ -27,6 +27,5 @@ variable "addon_context" {
     tags                           = map(string)
     irsa_iam_role_path             = string
     irsa_iam_permissions_boundary  = string
-    default_repository             = string
   })
 }
