@@ -13,6 +13,25 @@
   - [License](#license)
 
 ## Usage
+Credentials must be exported to the CLI prior to getting started.
+
+```sh
+
+export AWS_ACCESS_KEY_ID=... 
+export AWS_SECRET_ACCESS_KEY=...
+export AWS_SESSION_TOKEN=...
+
+```
+
+After deploying the mesh, deploy HashiCups demo app. 
+
+Demo can be found here: https://github.com/hashicorp-education/learn-consul-get-started-kubernetes/tree/main/self-managed/eks/hashicups 
+
+```sh
+
+kubectl apply --filename hashicups/v1/
+
+```
 
 If you would like to override any defaults with the chart, you can do so by passing the `helm_config` variable.
 
